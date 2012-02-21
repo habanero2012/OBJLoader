@@ -1,0 +1,11 @@
+# Blender v2.62 (sub 0) OBJ File: ''
+# www.blender.org
+mtllib square.mtl
+o Plane
+v 1.197929 -0.017535 -1.740655
+v 1.197929 -0.017535 0.259345
+v -0.802071 -0.017535 0.259344
+v -0.802071 -0.017535 -1.740656
+usemtl 
+s off
+f 1 4 3 2
