@@ -17,4 +17,16 @@ public class IndexBuffer {
 	public short get(int index) {
 		return mIndexList.get(index);
 	}
+	
+	/**
+	 * Indices配列を返す
+	 * @return
+	 */
+	public short[] getIndicesArray() {
+		short[] indices = new short[getIndexCount()];
+		for(int i=0; i<getIndexCount(); i++) {
+			indices[i] = mIndexList.get(i);
+		}
+		return indices;
+	}
 }
