@@ -125,8 +125,21 @@ public class Mesh {
 	
 	public void setupDataByFace() {
 		for(Face face: mFaceList) {
-			for(int i=0; i<face.numVertex; i++) {
-				mIndexBuffer.add((face.vertexIndex.get(i)).shortValue());
+			switch(face.numVertex) {
+			case 3:
+				mIndexBuffer.add(face.vertexIndex.get(0).shortValue());
+				mIndexBuffer.add(face.vertexIndex.get(1).shortValue());
+				mIndexBuffer.add(face.vertexIndex.get(2).shortValue());			
+				break;
+			// 面が四角形のときは、GL_TRIANGLEで描画するので、三角形２つ分のIndexを作成する
+			case 4:
+				mIndexBuffer.add(face.vertexIndex.get(0).shortValue());
+				mIndexBuffer.add(face.vertexIndex.get(1).shortValue());
+				mIndexBuffer.add(face.vertexIndex.get(2).shortValue());
+				mIndexBuffer.add(face.vertexIndex.get(2).shortValue());
+				mIndexBuffer.add(face.vertexIndex.get(3).shortValue());
+				mIndexBuffer.add(face.vertexIndex.get(0).shortValue());
+				break;
 			}
 		}
 	}

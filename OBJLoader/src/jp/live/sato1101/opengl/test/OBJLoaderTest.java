@@ -78,11 +78,11 @@ public class OBJLoaderTest {
 		
 		IndexBuffer ib = mesh.getIndexBuffer();
 		assertArrayEquals(new short[]{
-				    0, 3, 2, 1
+				    0, 3, 2, 2, 1, 0
 		        }, new short[]{
-				    ib.get(0), ib.get(1), ib.get(2), ib.get(3)
+				    ib.get(0), ib.get(1), ib.get(2), ib.get(3), ib.get(4), ib.get(5)
 		        });
-		assertArrayEquals(new int[]{4}, new int[]{ib.getIndexCount()});
+		assertArrayEquals(new int[]{6}, new int[]{ib.getIndexCount()});
 	}
 	
 	private Mesh loadMesh(String fileName) {
